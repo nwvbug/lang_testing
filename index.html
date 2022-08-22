@@ -149,6 +149,16 @@
             color: wheat;
         }
 
+        .fadeIn {
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+        }
+
+        .fadeOut {
+            transition: opacity 0.25s ease-in-out;
+            opacity: 0;
+        }
+
         /* https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load */
         .preload {
         animation-duration: 0s !important;
@@ -288,10 +298,9 @@
     </div>
 
     
-    <div id="changelog" class="changeloghidden preload">
-        <div class="horizontalFlex centerFlex">
-            <div class="headerText" style="color:#001945">Changelog</div>
-        </div>
+    <div id="changelog" class="changeloghidden preload centerText">
+        <div id="showchangelogtext" style="font-size: 3vh; margin-top: 1vh;">Click here to open the changelog!</div>
+        <div class="headerText" style="color:#001945">Changelog</div>
     </div>
 </body>
 <script>
@@ -301,9 +310,15 @@
         if (document.getElementById("changelog").classList.contains("changeloghidden")){
             document.getElementById("changelog").classList.remove("changeloghidden");
             document.getElementById("changelog").classList.add("changelogshown");
+
+            document.getElementById("showchangelogtext").classList.remove("fadein");
+            document.getElementById("showchangelogtext").classList.add("fadeout");
         } else {
             document.getElementById("changelog").classList.remove("changelogshown");
             document.getElementById("changelog").classList.add("changeloghidden");
+
+            document.getElementById("showchangelogtext").classList.remove("fadeout");
+            document.getElementById("showchangelogtext").classList.add("fadein");
         }
     });
 
