@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lang</title>
+    <style>
+        .headerContainer {
+            position: absolute;
+        }
+
+        .header {
+            height: 10vh;
+            background-color: wheat;
+            width: 100vw;
+        }
+
+        .body {
+            position: absolute;
+        }
+
+        .horizontalFlex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flexSpacer {
+            flex: 1;
+        }
+
+        body {
+            margin: 0;
+            background-color: #001945;
+        }
+
+
+
+        .uploadConvertContainer {
+            background-color: rgb(47, 61, 115);
+            width: 100vw;
+            color: wheat;
+        }
+
+        .largeButton {
+            border-radius: 1000000px;
+            height: 5vh;
+            width: 35vw;
+            padding: 2.5vh;
+            background-color: #001945;
+            margin: 5vh;
+        }
+
+        .centerText {
+            text-align: center;
+        }
+
+        .headerText {
+            font-weight: bold;
+            color: wheat;
+            margin: 5vh;
+        }
+
+        .studysetlist {
+            background-color: rgb(7, 15, 35);
+            margin-left: 10vw;
+            margin-right: 10vw;
+
+            max-height: 40vh;
+            overflow-y: scroll;
+        }
+
+        .studysetentry {
+            color: wheat; 
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .debugArea {
+            background-color: wheat;
+            width: 100vw;
+        }
+
+        .footer {
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div style="height: 100vh;">
+            <div style="height: 10vh; width: 100vw;">This is the header spacer, nobody should see this</div>
+
+            <div style="height: 5vh; width: 100vw;"></div>
+    
+            <div class="uploadConvertContainer horizontalFlex">
+                <div class="flexSpacer"></div>
+                <div class="largeButton horizontalFlex">
+                    <div style="width: 100%" class="centerText">Convert From Quizlet</div>
+                </div>
+                <div class="flexSpacer"></div>
+                <div class="largeButton horizontalFlex">
+                    <div style="width: 100%;" class="centerText">Upload Lang Pages</div>
+                </div>
+                <div class="flexSpacer"></div>
+            </div>
+    
+            <div style="color: wheat;" class="centerText headerText">Your Study Sets</div>
+    
+            <div class="studysetlist">
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+                <div class="horizontalFlex studysetentry">
+                    <div>We are watching ysssssou through .lang</div>
+                    <div class="flexSpacer"></div>
+                    <div>8/16/2020</div>
+                    <div style="width: 10vw;"></div>
+                    <div>View</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 100vh;" class="debugArea">
+            <div style="height: 5vh;"></div>
+            <div class="uploadConvertContainer horizontalFlex centerText" style="padding-left: 2.5vw; padding-right: 2.5vw; width: 95vw;">
+                <div>
+                    <img style="height: 10vh;" src="assets/logos/lang-wheat.png">
+                </div>
+                <div class="headerText">Changelog</div>
+            </div>
+        </div>
+
+        <div style="height: 15vh; width: 100vw;" class="footer horizontalFlex centerText">
+            <div>
+                <img style="height: 10vh;" src="assets/logos/nwvbug.png">
+            </div>
+            <div style="width: 100vw;">
+                About | Privacy Policy | Terms of Service
+            </div>
+            <div>
+                <img style="height: 10vh;" src="assets/logos/lang-wheat.png">
+            </div>
+        </div>
+    </div>
+    <div class="headerContainer" style="width: 100vw">
+        <div class="horizontalFlex header">
+            <div>
+                <img style="height: 10vh;" src="assets/logos/lang.png">
+            </div>
+            <div class="flexSpacer"></div>
+            <div class="horizontalFlex" style="justify-content: space-between; width: 40vw;">
+                <div>What is Lang?</div>
+                <div>How do I use Lang?</div>
+                <div>Lang Creators or sumthing</div>
+            </div>
+            <div class="flexSpacer"></div>
+            <div>Username</div>
+            <div>
+                <img style="height: 5vh;" src="assets/logos/lang.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Webpage designed by aspeli, realized by ankleBowl -->
+<!-- If anyone else comes along and adds to the page, add your name here -->
