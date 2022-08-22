@@ -7,6 +7,45 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
         
+        .pfp {
+            margin-left: 10px;
+        }
+
+        .changelogshown {
+            transform: translate(-50%, -50%);
+            animation: showchangelog 0.5s ease-in-out;
+        }
+
+        .changeloghidden {
+            transform: translate(-50%, 60%);
+            animation: hidechangelog 0.5s ease-in-out;
+        }
+
+        @keyframes showchangelog {
+            0% {
+                transform: translate(-50%, 60%);
+            }
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @keyframes hidechangelog {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+            100% {
+                transform: translate(-50%, 60%);
+            }
+        }
+
+        #changelog {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 75vw; height: 75vh; background-color: wheat;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
 
         .headerContainer {
             position: absolute;
@@ -29,6 +68,11 @@
             align-items: center;
         }
 
+        .centerFlex {
+            justify-content: center;
+            align-items: center;
+        }
+
         .flexSpacer {
             flex: 1;
         }
@@ -37,6 +81,10 @@
             margin: 0;
             background-color: #001945;
             font-family: 'Josefin Sans', sans-serif;
+
+            overflow-y: hidden;
+            height: 100vh;
+            width: 100vw;
         }
 
 
@@ -54,6 +102,15 @@
             padding: 2.5vh;
             background-color: #001945;
             margin: 5vh;
+        }
+
+        .button {
+            border-radius: 1000000px;
+            height: 3vh;
+            width: 10vw;
+            padding: 1vh;
+            background-color: #001945;
+            margin: 2vh;
         }
 
         .centerText {
@@ -91,10 +148,16 @@
         .footer {
             color: wheat;
         }
+
+        /* https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load */
+        .preload {
+        animation-duration: 0s !important;
+        -webkit-animation-duration: 0s !important;
+        transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
     </style>
 </head>
 <body>
-    <div class="body">
+    <div class="body preload">
         <div style="height: 100vh;">
             <div style="height: 10vh; width: 100vw;">This is the header spacer, nobody should see this</div>
 
@@ -107,12 +170,12 @@
                 </div>
                 <div class="flexSpacer"></div>
                 <div class="largeButton horizontalFlex">
-                    <div style="width: 100%;" class="centerText">Upload Lang Pages</div>
+                    <div style="width: 100%;" class="centerText">Upload Lang Studysheet</div>
                 </div>
                 <div class="flexSpacer"></div>
             </div>
     
-            <div style="color: wheat;" class="centerText headerText">Your Study Sets</div>
+            <div style="color: wheat;" class="centerText headerText">Your Studysheets</div>
     
             <div class="studysetlist">
                 <div class="horizontalFlex studysetentry">
@@ -192,11 +255,6 @@
             </div>
         </div> -->
     </div>
-
-
-
-
-
     <div id="header0" class="headerContainer" style="width: 100vw">
         <div class="horizontalFlex header">
             <div>
@@ -211,26 +269,53 @@
             <div class="flexSpacer"></div>
             <div>Username</div>
             <div>
-                <img style="height: 5vh;" src="assets/logos/lang.png">
+                <img class="pfp" style="height: 5vh;" src="assets/logos/lang.png">
             </div>
         </div>
     </div>
     <div id="header1" class="headerContainer horizontalFlex centerText" style="height: 10vh; width: 100vw; justify-content: center;;">
         <div class="horizontalFlex" style="width: 70vw;">
-            <div class="flexSpacer">
-                <div>What is Lang?</div>
+            <div class="flexSpacer button horizontalFlex" style="align-items: center; justify-content: center;">
+                <div style="color: wheat;">What is Lang?</div>
             </div>
-            <div class="flexSpacer">
-                <div>How do I use Lang?</div>
+            <div class="flexSpacer button horizontalFlex" style="align-items: center; justify-content: center;">
+                <div style="color: wheat;">How do I use Lang?</div>
             </div>
-            <div class="flexSpacer">
-                <div>Lang Creators or sumthing</div>
+            <div class="flexSpacer button horizontalFlex" style="align-items: center; justify-content: center;">
+                <div style="color: wheat;">Lang Creators or sumthing</div>
             </div>
+        </div>
+    </div>
+
+    
+    <div id="changelog" class="changeloghidden preload">
+        <div class="horizontalFlex centerFlex">
+            <div class="headerText" style="color:#001945">Changelog</div>
         </div>
     </div>
 </body>
 <script>
     
+    // Add an event listener to id changelog, when it is clicked toggle the class changeloghidden and changelogshown
+    document.getElementById("changelog").addEventListener("click", function(){
+        if (document.getElementById("changelog").classList.contains("changeloghidden")){
+            document.getElementById("changelog").classList.remove("changeloghidden");
+            document.getElementById("changelog").classList.add("changelogshown");
+        } else {
+            document.getElementById("changelog").classList.remove("changelogshown");
+            document.getElementById("changelog").classList.add("changeloghidden");
+        }
+    });
+
+    setTimeout(function(){
+        document.getElementById("changelog").classList.remove("preload")
+    },500);
+
+    // disbale scrolling
+    window.addEventListener("scroll", function(){
+        window.scrollTo(0,0);
+    });
+
 </script>
 </html>
 
